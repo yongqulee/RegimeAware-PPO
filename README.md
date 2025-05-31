@@ -50,6 +50,11 @@ A cleaned and processed version of the original dataset, optimized for computati
 * **`enhanced_monte_carlo.py`**: Extends Monte Carlo simulation using macroeconomic inputs for dynamic regime modeling.
 * **`regime_rl_env.py`**: Custom OpenAI Gym environment using HMM regime probabilities as state input.
 * **`ppo_train_regime_rl.py`**: Trains a PPO agent using stable-baselines3 to learn optimal portfolio strategies based on regime-aware signals.
+* **`ppo_rl_pipeline.py`**: Basic PPO agent with simple reward function.
+* **`ppo_rl_stable.py`**: Final implementation with transaction cost modeling, volatility-adjusted reward, clipping, capital reset, and shock simulation.
+* **`ppo_advanced_vs_equal_returns.csv`**: Final evaluation data comparing PPO, Equal Weight, and Sharpe-Optimized portfolios.
+* **`rolling_cagr_comparison_all_strategies.png`**: Rolling CAGR plot (10y, 20y, 30y) across all strategies.
+* **`ppo_vs_equal_portfolio_growth.png`**: Final value growth chart.
 
 ---
 
@@ -57,6 +62,7 @@ A cleaned and processed version of the original dataset, optimized for computati
 
 * **`analysis_results.md`**: Summarizes all results from traditional portfolio analysis.
 * **`results.md`**: Summarizes regime-aware Monte Carlo simulation, clustering quality, and RL-based outcomes.
+* **`rl_analysis_report.md`**: Detailed summary of the PPO reinforcement learning portfolio training and evaluation pipeline.
 
 ---
 
@@ -71,6 +77,9 @@ A cleaned and processed version of the original dataset, optimized for computati
 * Supervised regime prediction
 * Reinforcement learning-based portfolio optimization
 * Risk assessment: VaR, CVaR, and max drawdown
+* Regime-aware training with PPO
+* Evaluation of PPO against equal-weight and optimized portfolios
+* Rolling CAGR analysis and stress testing
 
 ---
 
@@ -88,6 +97,7 @@ python regime_classification.py
 python monte_carlo_simulation.py
 python enhanced_monte_carlo.py
 python ppo_train_regime_rl.py
+python ppo_rl_stable.py
 ```
 
 ---
@@ -105,12 +115,12 @@ python ppo_train_regime_rl.py
 * xgboost
 * tensorflow
 * stable-baselines3
-* gym
+* gymnasium
 
 Install them using:
 
 ```bash
-pip install pandas numpy scipy statsmodels scikit-learn matplotlib hmmlearn xgboost tensorflow stable-baselines3 gym
+pip install pandas numpy scipy statsmodels scikit-learn matplotlib hmmlearn xgboost tensorflow stable-baselines3 gymnasium
 ```
 
 ---
