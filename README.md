@@ -79,11 +79,11 @@ Each script generates the following output files:
 
 Trained models saved under:
 
-* **'stable/ppo_rl_stable_seed0.zip through seed4.zip'**
-* **'nocost/nocost_seed0.zip through seed4.zip'**
-* **'noreset/noreset_seed0.zip through seed4.zip'**
+*stable/ppo_rl_stable_seed0.zip through seed4.zip*
+*nocost/nocost_seed0.zip through seed4.zip*
+*noreset/noreset_seed0.zip through seed4.zip*
 
-###Generated Files
+### Generated Files
 
 * ppo_vs_equal_portfolio_growth.png
 * ppo_vs_equal_returns.csv
