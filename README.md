@@ -75,23 +75,25 @@ Each script generates the following output files:
 
 ---
 
-### PPO Variant Outputs
+## PPO Variant Outputs
 
-Trained models saved under:
+### Trained Models
 
-*stable/ppo_rl_stable_seed0.zip through seed4.zip*
-*nocost/nocost_seed0.zip through seed4.zip*
-*noreset/noreset_seed0.zip through seed4.zip*
+The following PPO models were trained using different ablation settings and saved under:
 
-### Generated Files
+- `stable/ppo_rl_stable_seed0.zip` through `stable/ppo_rl_stable_seed4.zip`
+- `nocost/nocost_seed0.zip` through `nocost/nocost_seed4.zip`
+- `noreset/noreset_seed0.zip` through `noreset/noreset_seed4.zip`
 
-* ppo_vs_equal_portfolio_growth.png
-* ppo_vs_equal_returns.csv
-* ppo_vs_equal_returns_clipped.csv
-* rolling_cagr_comparison_all_strategies.png
-* rolling_cagr_stress_overlay.png
-* KDECAGR.png (KDE of CAGR for Equal, Momentum, Sharpe-opt)
-* SHAP.png (SHAP explanation plot)
+### Generated Evaluation Files
+
+- `ppo_vs_equal_portfolio_growth.png` — Portfolio growth comparison between PPO and equal-weight strategy
+- `ppo_vs_equal_returns.csv` — Final log return series for PPO and baselines
+- `ppo_vs_equal_returns_clipped.csv` — Clipped return series used for stress visualization
+- `rolling_cagr_comparison_all_strategies.png` — Rolling CAGR comparison for Equal, Momentum, Sharpe-opt, and PPO
+- `rolling_cagr_stress_overlay.png` — PPO CAGR with annotated financial stress years
+- `KDECAGR.png` — Kernel density estimate of CAGR distributions across baseline strategies
+- `SHAP.png` — SHAP values explaining PPO model’s allocation decisions
 
 ---
 
@@ -123,3 +125,25 @@ Trained models saved under:
 * SHAP explainability of learned PPO policies
 
 ---
+
+---
+
+## License
+
+This project is licensed under the MIT License. See the `LICENSE` file for full details.
+
+---
+
+## Acknowledgments
+
+This work builds upon publicly available financial data curated by Professor **Aswath Damodaran** of New York University (NYU), whose commitment to data transparency and academic openness continues to inspire.
+
+Special thanks to the contributors of the following tools and libraries:
+
+- [Stable-Baselines3](https://github.com/DLR-RM/stable-baselines3) for reinforcement learning agents
+- [scikit-learn](https://scikit-learn.org/) and [XGBoost](https://xgboost.readthedocs.io/) for supervised regime classification
+- [hmmlearn](https://hmmlearn.readthedocs.io/) and [pomegranate](https://github.com/jmschrei/pomegranate) for probabilistic regime modeling
+- [matplotlib](https://matplotlib.org/) and [seaborn](https://seaborn.pydata.org/) for plotting
+- NYU Center for Data Science for computational resources and academic environment
+
+This project was completed as part of an academic exploration during the Master’s in Data Science program at **New York University**.
