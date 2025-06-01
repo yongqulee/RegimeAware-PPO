@@ -75,11 +75,33 @@ Each script generates the following output files:
 
 ---
 
+### PPO Variant Outputs
+
+Trained models saved under:
+
+* **'stable/ppo_rl_stable_seed0.zip through seed4.zip'**
+* **'nocost/nocost_seed0.zip through seed4.zip'**
+* **'noreset/noreset_seed0.zip through seed4.zip'**
+
+###Generated Files
+
+* ppo_vs_equal_portfolio_growth.png
+* ppo_vs_equal_returns.csv
+* ppo_vs_equal_returns_clipped.csv
+* rolling_cagr_comparison_all_strategies.png
+* rolling_cagr_stress_overlay.png
+* KDECAGR.png (KDE of CAGR for Equal, Momentum, Sharpe-opt)
+* SHAP.png (SHAP explanation plot)
+
+---
+
 ## Results
 
-* **`analysis_results.md`**: Summarizes all results from traditional portfolio analysis.
-* **`results.md`**: Summarizes regime-aware Monte Carlo simulation, clustering quality, and RL-based outcomes.
-* **`rl_analysis_report.md`**: Detailed summary of the PPO reinforcement learning portfolio training and evaluation pipeline.
+* **`analysis_results.md`**: Summarizes all results from traditional portfolio analysis.  
+* **`results.md`**: Summarizes regime-aware Monte Carlo simulation, clustering quality, and RL-based outcomes.  
+* **`rl_analysis_report.md`**: Detailed summary of the PPO reinforcement learning portfolio training, evaluation, ablation studies (`nocost`, `noreset`, `noclip`), statistical testing, and SHAP explainability.  
+* **`ppo_full_pipeline.py`**: Single script for PPO training and evaluation across baseline and ablation variants using multi-seed reproducibility and evaluation tracking.
+
 
 ---
 
@@ -97,16 +119,7 @@ Each script generates the following output files:
 * Regime-aware training with PPO
 * Evaluation of PPO against equal-weight and optimized portfolios
 * Rolling CAGR analysis and stress testing
+* PPO ablation variants: nocost, noclip, noreset
+* SHAP explainability of learned PPO policies
 
 ---
-
-## Quickstart
-
-To quickly get started:
-
-```bash
-git clone https://github.com/your-repo-link
-cd financial-analysis-repo
-python cleaned_real_asset_returns.py
-python sharpe_stress_analysis.py
-
