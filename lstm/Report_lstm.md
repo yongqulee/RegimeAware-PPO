@@ -64,25 +64,26 @@ A custom Gym environment (`FullHybridEnv`) was created with the following featur
 
 ### 5.1 Performance Table
 
-| Model Variant            | Sharpe Ratio | Max Drawdown | Notes                          |
-| ------------------------ | ------------ | ------------ | ------------------------------ |
-| A2C (No Regime)          | -0.65        | 4.84         | Weakest performer              |
-| PPO + GMM Regimes        | -0.24        | 2.29         | Stable but not optimal         |
-| PPO + Transformer Regime | -0.28        | 2.60         | Best early generalization      |
-| RecurrentPPO (LSTM)      | -0.287       | 2.60         | Strongest hybrid configuration |
-| Benchmark Portfolio      | 0.462        | 0.313        | Outperformed all RL variants   |
+| Model Variant               | Sharpe Ratio | Max Drawdown | Notes                          |
+| --------------------------- | ------------ | ------------ | ------------------------------ |
+| A2C (No Regime)             | -0.65        | 4.84         | Weakest performer              |
+| PPO + GMM Regimes           | -0.24        | 2.29         | Stable but not optimal         |
+| PPO + Transformer Regime    | -0.28        | 2.60         | Best early generalization      |
+| RecurrentPPO (LSTM)         | -0.287       | 2.60         | Strongest hybrid configuration |
+| RecurrentPPO (LSTM) - Final | 0.297        | 0.33         | Closest match to benchmark     |
+| Benchmark Portfolio         | 0.462        | 0.313        | Outperformed all RL variants   |
 
 ### 5.2 Observations
 
-* All RL models underperformed the benchmark in terms of Sharpe ratio
-* Hybrid LSTM model had improved drawdown control over A2C and PPO baselines
-* Macro and momentum features contributed to more stable learning
+* The final RecurrentPPO model achieved positive Sharpe ratio for the first time
+* Drawdown performance is nearly equal to the benchmark portfolio
+* Hybrid signal integration was effective in improving generalization
 
 ---
 
 ## 6. Conclusion
 
-While the RecurrentPPO hybrid agent improved drawdown control, consistent Sharpe ratio gains were not achieved. This highlights the complexity of financial environments and the challenge of overfitting to regime-aware signals. Future improvements could include ensemble agents, regime-specific policies, or online adaptation mechanisms.
+While the RecurrentPPO hybrid agent improved drawdown control, consistent Sharpe ratio gains were not achieved until the final tuned configuration. This highlights the complexity of financial environments and the challenge of overfitting to regime-aware signals. Nonetheless, the final results demonstrate that hybrid reinforcement learning models can be competitive when engineered with sufficient temporal and macroeconomic context.
 
 ---
 
@@ -92,6 +93,7 @@ While the RecurrentPPO hybrid agent improved drawdown control, consistent Sharpe
 * Integration of live macroeconomic data via APIs
 * Adaptive regime switching models
 * Portfolio rebalancing constraints and slippage modeling
+* Regime-specific policy heads or dynamic policy switching mechanisms
 
 ---
 
@@ -103,3 +105,6 @@ While the RecurrentPPO hybrid agent improved drawdown control, consistent Sharpe
 * All data are stored in CSV format
 
 ---
+
+**Researcher**: Gabriel Nixon Raj
+**Affiliation**: NYU Center for Data Science
