@@ -100,6 +100,30 @@ Total:           67 samples
 
 While not significant at the 5% level, the regime label appears to carry some explanatory power. The ~4.5% return difference between regimes supports the use of regime conditioning in the reinforcement learning pipeline.
 
+### **5.4 Economic Utility Evaluation**
+
+To bridge machine learning performance with financial theory, we computed investor-centric utility metrics:
+
+| **Utility Function**       | **Mean Utility** |
+|---------------------------|------------------|
+| CRRA (γ = 3.0)             | 0.0297           |
+| CARA (α = 3.0)             | -0.9120          |
+
+These values indicate that the RecurrentPPO (LSTM) model provides utility-aligned performance for a risk-averse investor, strengthening the financial relevance of our learned policy.
+
+---
+
+### **5.5 Information-Theoretic Analysis**
+
+To evaluate whether regime signals carry explanatory power, we computed the Mutual Information between regime labels and returns:
+
+| **Metric**                           | **Value** |
+|-------------------------------------|-----------|
+| Mutual Information (regime → return) | 0.1020    |
+
+The Mutual Information score of **0.1020** shows that regime labels encode measurable information about portfolio returns, validating the relevance of regime conditioning in the agent's learning process.
+
+
 
 ---
 
