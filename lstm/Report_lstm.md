@@ -143,14 +143,5 @@ While the RecurrentPPO hybrid agent improved drawdown control, consistent Sharpe
 
 ---
 
-## Appendix
-
-* All code is available in `ppo_lstm_hybrid.py`
-* Training logs and models saved in `/trained_models/`
-* Result plots saved in `/plots/`
-* All data are stored in CSV format
-
----
-
 **Researcher**: Gabriel Nixon Raj
 **Affiliation**: NYU Center for Data Science
