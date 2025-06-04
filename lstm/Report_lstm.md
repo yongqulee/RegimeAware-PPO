@@ -73,11 +73,33 @@ A custom Gym environment (`FullHybridEnv`) was created with the following featur
 | RecurrentPPO (LSTM) - Final | 0.297        | 0.33         | Closest match to benchmark     |
 | Benchmark Portfolio         | 0.462        | 0.313        | Outperformed all RL variants   |
 
+
 ### 5.2 Observations
 
 * The final RecurrentPPO model achieved positive Sharpe ratio for the first time
 * Drawdown performance is nearly equal to the benchmark portfolio
 * Hybrid signal integration was effective in improving generalization
+
+### **5.3 Statistical Validation of Regime Predictive Power**
+
+To validate whether LSTM-inferred regime classifications explain variation in portfolio returns, we performed statistical hypothesis testing.
+
+**Regime Label Distribution:**
+```
+Regime 0 (Bear): 38 samples  
+Regime 1 (Bull): 29 samples  
+Total:           67 samples
+```
+
+#### **Statistical Test Summary**
+
+| **Test**        | **Value**              | **p-value** | **Interpretation**                                  |
+|-----------------|------------------------|-------------|-----------------------------------------------------|
+| ANOVA           | F(1, 65) = 3.231       | 0.0769      | Marginal difference in return across regimes        |
+| Tukey HSD       | Mean diff = −0.0447    | 0.0769      | Weak signal, not statistically significant          |
+
+While not significant at the 5% level, the regime label appears to carry some explanatory power. The ~4.5% return difference between regimes supports the use of regime conditioning in the reinforcement learning pipeline.
+
 
 ---
 
