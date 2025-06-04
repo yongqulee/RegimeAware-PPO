@@ -4,7 +4,7 @@ This section documents the implementation and evaluation of a **regime-aware PPO
 
 ---
 
-## 📁 Contents
+## Contents
 
 - `ppo_rl_pipeline.py`: Initial PPO agent using simple reward structure
 - `ppo_rl_stable.py`: Final PPO implementation with:
@@ -26,7 +26,7 @@ This section documents the implementation and evaluation of a **regime-aware PPO
 
 ---
 
-## 🧠 PPO Agent Overview
+## PPO Agent Overview
 
 - **Environment**: `RegimeAwarePortfolioEnv` (custom Gym)
 - **Observations**: Returns + regime probabilities (dim = assets + HMM regimes)
@@ -40,7 +40,7 @@ This section documents the implementation and evaluation of a **regime-aware PPO
 
 ---
 
-## 📈 Final Evaluation Results
+## Final Evaluation Results
 
 | Metric                | PPO (Stable) | Equal-Weight | Sharpe-Opt |
 |----------------------|--------------|--------------|------------|
@@ -51,7 +51,7 @@ This section documents the implementation and evaluation of a **regime-aware PPO
 
 ---
 
-## 📊 Rolling CAGR Results
+## Rolling CAGR Results
 
 - PPO shows **10y CAGR**: 28% to 49%
 - PPO **20y CAGR** remains above 30% for most years
@@ -60,7 +60,7 @@ This section documents the implementation and evaluation of a **regime-aware PPO
 
 ---
 
-## 🧪 Ablation Study Results
+## Ablation Study Results
 
 PPO variants across 5 seeds:
 
@@ -77,7 +77,7 @@ Statistical test results (Wilcoxon vs Baseline):
 
 ---
 
-## 🔍 SHAP Interpretation
+## SHAP Interpretation
 
 - Used `DeepExplainer` over PPO policy network
 - Top regime/return features impacting policy action: e.g., `T-Bill Spread`
@@ -85,7 +85,7 @@ Statistical test results (Wilcoxon vs Baseline):
 
 ---
 
-## 💡 Implementation Details
+## Implementation Details
 
 - PPO from `stable-baselines3`
 - HMM for regime detection via `hmmlearn`
@@ -95,7 +95,7 @@ Statistical test results (Wilcoxon vs Baseline):
 
 ---
 
-## ✅ Recommendations
+## Recommendations
 
 - Use `ppo_rl_stable.py` for final evaluation and production
 - Use `ppo_full_pipeline.py` for training+explanation in one go
