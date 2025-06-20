@@ -6,7 +6,7 @@ This repository contains a comprehensive financial analysis of asset returns, po
 
 ## Dataset Overview
 
-### Finance Portfolio 2.csv
+### Finance Portfolio.csv
 
 The primary dataset, "Finance Portfolio 2.csv," provided by Professor Aswath Damodaran from NYU, contains historical annual returns for various asset classes, including:
 
