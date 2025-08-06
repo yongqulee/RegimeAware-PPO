@@ -129,8 +129,7 @@ The following PPO models were trained using different ablation settings and save
 ---
 
 ## License
-
-Submitted to ACM ICAIF 2025 under review. All content © Gabriel Nixon Raj. This project is licensed under the MIT License. See the `LICENSE` file for full details.
+All content © Gabriel Nixon Raj. This project is licensed under the MIT License. See the `LICENSE` file for full details.
 
 ---
 
